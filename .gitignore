@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+graphify-out/
+
 ### STS ###
 .apt_generated
 .classpath
@@ -32,3 +34,19 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Local Environment Variables
+.env
+
+GEMINI-INPUT.md
+API-DOCS.md
+DRAFT-DOCS.md
+AGENTS.md
+Dockerfile.md
+REQUEST-BODY.md
+DATABASE-SCHEMA.md
+API_TESTING_README.md
+postman_collection_assets_pnl.json
+.hermes/
+.claude/
+

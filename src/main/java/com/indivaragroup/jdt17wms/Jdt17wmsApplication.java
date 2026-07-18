@@ -9,5 +9,4 @@ public class Jdt17wmsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Jdt17wmsApplication.class, args);
 	}
-
 }
