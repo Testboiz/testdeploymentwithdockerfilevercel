@@ -19,6 +19,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: ${HIBERNATE_USE_METADATA:true}
 
 jwt:
   secret: ${JWT_SECRET:NAfQzSmGqhxfv+qc4dj17sRDL1vpcMSYvpnulS4Y7wCsExe5Gn952U+dMfsyBqih0cq8umiagqQB7Jxj4dB9jg==}
