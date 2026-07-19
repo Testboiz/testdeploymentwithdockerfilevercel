@@ -6,6 +6,8 @@ spring:
       fail-on-unknown-properties: true
   config:
     import: optional:file:.env[.properties]
+  main:
+    lazy-initialization: ${SPRING_MAIN_LAZY_INITIALIZATION:false}
   datasource:
     url:  ${DB_URL:jdbc:postgresql://localhost:5432/monarch}
     username: ${DB_USERNAME:postgres}
@@ -13,7 +15,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${DB_DDL_AUTO:update}
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect

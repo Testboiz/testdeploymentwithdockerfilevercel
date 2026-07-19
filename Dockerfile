@@ -52,11 +52,13 @@ EXPOSE 8080
 
 # Environment configurations - Spring Boot Active Profile
 ENV SPRING_PROFILES_ACTIVE=local
+ENV SPRING_MAIN_LAZY_INITIALIZATION=true
 
 # Database Connection (Defaulting directly to the Supabase URL configuration)
 ENV DB_URL=jdbc:postgresql://aws-0-ap-northeast-1.pooler.supabase.com:6543/postgres?prepareThreshold=0
 ENV DB_USERNAME=postgres.vhssovcozxdwpmsvrvhr
 ENV DB_PASSWORD=HXrfUmI15vxDsXrm
+ENV DB_DDL_AUTO=none
 
 # JWT Config (Left blank for runtime injection as requested)
 ENV JWT_SECRET=""
