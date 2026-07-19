@@ -50,6 +50,7 @@ ENV DB_URL=jdbc:postgresql://aws-0-ap-northeast-1.pooler.supabase.com:6543/postg
 ENV DB_USERNAME=postgres.vhssovcozxdwpmsvrvhr
 ENV DB_PASSWORD=HXrfUmI15vxDsXrm
 ENV DB_DDL_AUTO=none
+ENV HIBERNATE_USE_METADATA=false
 
 # JWT Config (Left blank for runtime injection)
 ENV JWT_SECRET=""
