@@ -6,6 +6,8 @@ spring:
       fail-on-unknown-properties: true
   config:
     import: optional:file:.env[.properties]
+  main:
+    lazy-initialization: ${SPRING_MAIN_LAZY_INITIALIZATION:false}
   datasource:
     url:  ${DB_URL:jdbc:postgresql://localhost:5432/monarch}
     username: ${DB_USERNAME}
@@ -13,15 +15,17 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${DB_DDL_AUTO:update}
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: ${HIBERNATE_USE_METADATA:true}
 
 jwt:
-  secret: ${JWT_SECRET}
-  access-token-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS}
-  refresh-token-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS}
+  secret: ${JWT_SECRET:NAfQzSmGqhxfv+qc4dj17sRDL1vpcMSYvpnulS4Y7wCsExe5Gn952U+dMfsyBqih0cq8umiagqQB7Jxj4dB9jg==}
+  access-token-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS:900000}
+  refresh-token-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
 
 questionnaire:
   data:
