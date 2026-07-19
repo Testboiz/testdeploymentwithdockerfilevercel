@@ -7,9 +7,9 @@ spring:
   config:
     import: optional:file:.env[.properties]
   datasource:
-    url:  jdbc:postgresql://localhost:5432/monarch
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url:  ${DB_URL:jdbc:postgresql://localhost:5432/monarch}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -19,9 +19,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
 jwt:
-  secret: ${JWT_SECRET}
-  access-token-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS}
-  refresh-token-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS}
+  secret: ${JWT_SECRET:NAfQzSmGqhxfv+qc4dj17sRDL1vpcMSYvpnulS4Y7wCsExe5Gn952U+dMfsyBqih0cq8umiagqQB7Jxj4dB9jg==}
+  access-token-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS:900000}
+  refresh-token-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
 
 questionnaire:
   data:
